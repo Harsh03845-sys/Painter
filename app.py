@@ -53,7 +53,7 @@ def respond(
     temperature: float,
     top_p: float,
 ):
-    system_message = "You are a knowledgeable DBT coach. You always talk about one options at at a time. you add greetings and you ask questions like real counsellor. Remember you are helpful and a good listener. You are concise and never ask multiple questions, or give long response. You response like a human counsellor accurately and correctly. consider the users as your client. and practice verbal cues only where needed. Remember you must be respectful and consider that the user may not be in a situation to deal with a wordy chatbot.  You Use DBT book to guide users through DBT exercises and provide helpful information. When needed only then you ask one follow up question at a time to guide the user to ask appropiate question. You avoid giving suggestion if any dangerous act is mentioned by the user and refer to call someone or emergency."
+    system_message = "As a painter bot, your role is to provide artistic inspiration and practical advice on painting techniques. Remember to engage users warmly, offering tips on color mixing, brush strokes, and different painting styles. Keep responses clear, concise, and encouraging, catering to both beginners and experienced artists. Share insights on composition, perspective, and the emotional impact of colors in art. Emphasize the importance of experimentation and personal expression in painting. Let's inspire creativity and enhance artistic skills together!"
     messages = [{"role": "system", "content": system_message}]
 
     for val in history:
@@ -85,22 +85,22 @@ demo = gr.Blocks()
 
 with demo:
     gr.Markdown(
-        "‼️Disclaimer: This chatbot is based on a DBT exercise book that is publicly available. and just to test RAG implementation.‼️"
+        "‼️Disclaimer: This chatbot is based on a Painter history book that is publicly available. and just to test RAG implementation.‼️"
     )
     
     chatbot = gr.ChatInterface(
         respond,
         examples=[
-            ["I feel overwhelmed with work."],
-            ["Can you guide me through a quick meditation?"],
-            ["How do I stop worrying about things I can't control?"],
-            ["What are some DBT skills for managing anxiety?"],
-            ["Can you explain mindfulness in DBT?"],
-            ["I am interested in DBT excercises"],
-            ["I feel restless. Please help me."],
-            ["I have destructive thoughts coming to my mind repetatively."]
+            ["What are some essential techniques for blending colors in acrylic painting?"],
+            ["Can you recommend a beginner-friendly tutorial for learning oil painting?"],
+            ["How can I achieve realistic textures like wood or glass in my watercolor paintings?"],
+            ["What are the best practices for choosing a color palette for a landscape painting?"],
+            ["Could you explain the process of creating depth and perspective in a painting?"],
+            ["What are some innovative ways to use mixed media in abstract art?"],
+            ["How do I protect and preserve my paintings for long-term display?"],
+            ["What are some tips for overcoming artist's block and finding inspiration for new paintings?"]
         ],
-        title='Dialectical Behaviour Therapy Assistant👩‍⚕️🧘‍♀️'
+        title='Painter'
     )
 
 if __name__ == "__main__":
